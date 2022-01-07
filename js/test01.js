@@ -1,6 +1,7 @@
 const app = new PIXI.Application({ transparent: true });
 document.body.appendChild(app.view);
 
+// fighterspr1.png -> https://millionthvector.blogspot.com/2014/06/new-free-sprite.html
 // create a new Sprite from an image path.
 const bunny = PIXI.Sprite.from("/assets/fighterspr1.png");
 //const bunny = PIXI.Sprite.from("/assets/bunny.png");
