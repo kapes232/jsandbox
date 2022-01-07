@@ -6,6 +6,10 @@ document.body.appendChild(app.view);
 const bunny = PIXI.Sprite.from("/assets/fighterspr1.png");
 //const bunny = PIXI.Sprite.from("/assets/bunny.png");
 
+// escalado del sprite al 30% del tamaño original
+bunny.width = bunny.width * 0.3;
+bunny.height = bunny.height * 0.3;
+
 // center the sprite's anchor point
 bunny.anchor.set(0.5);
 
@@ -17,5 +21,5 @@ app.stage.addChild(bunny);
 
 app.ticker.add(() => {
   // just for fun, let's rotate mr rabbit a little
-  bunny.rotation += 0.1;
+  bunny.rotation += 0.015;
 });
