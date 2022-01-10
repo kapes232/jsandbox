@@ -4,7 +4,8 @@ const app = new PIXI.Application({
   backgroundColor: 0x00000f,
   width: 640,
   height: 454,
-  resolution: window.devicePixelRatio || 1
+  resolution: window.devicePixelRatio || 1,
+  autoResize: true
 });
 document.body.appendChild(app.view);
 

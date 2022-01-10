@@ -31,8 +31,8 @@
 
       .right {
         background-color: #555555;
-        float: left;
-        width: 30%;
+        float: right;
+        width: 20%;
         padding: 4px;
         margin-top: 4px;
         text-align: center;
@@ -67,8 +67,8 @@
 
     <div style="overflow: auto;">
       <div class="menu">
-        <a href="demo1.htm" target="frame">Demo 1</a>
-        <a href="#">Link 2</a>
+        <a href="html/demo1.htm" target="frame" id="d1">Demo 1</a>
+        <a href="html/demo2.htm" target="frame" id="d2">Demo 2</a>
         <a href="#">Link 3</a>
         <a href="#">Link 4</a>
       </div>
@@ -96,4 +96,10 @@
     </div>
     <iframe name="frame" width="100%" height="460px" src="html/demo1.htm" />
   </body>
+  <script>
+    window.onload = function () {
+      let lmnt = document.getElementById("d2");
+      if (lnmt != null || lmnt != "") lnmt.click();
+    };
+  </script>
 </html>
