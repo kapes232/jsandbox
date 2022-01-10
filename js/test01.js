@@ -1,25 +1,31 @@
-const app = new PIXI.Application({ transparent: true });
+// ejemplo básico de sprite (de la documentación original)
+const app = new PIXI.Application({
+  transparent: true,
+  backgroundColor: 0x00000f,
+  width: 640,
+  height: 480,
+  resolution: window.devicePixelRatio || 1
+});
 document.body.appendChild(app.view);
 
 // fighterspr1.png -> https://millionthvector.blogspot.com/2014/06/new-free-sprite.html
 // create a new Sprite from an image path.
-const bunny = PIXI.Sprite.from("/assets/fighterspr1.png");
-//const bunny = PIXI.Sprite.from("/assets/bunny.png");
+const ship = PIXI.Sprite.from("/assets/fighterspr1.png");
 
-// escalado del sprite al 30% del tamaño original
-bunny.width = bunny.width * 0.3;
-bunny.height = bunny.height * 0.3;
+// escalado del sprite al 30% del tamaño original proporcional al viewport
+ship.width = ship.width * app.screen.width * 0.3;
+ship.height = ship.height * app.screen.height * 0.3;
 
 // center the sprite's anchor point
-bunny.anchor.set(0.5);
+ship.anchor.set(0.5);
 
 // move the sprite to the center of the screen
-bunny.x = app.screen.width / 2;
-bunny.y = app.screen.height / 2;
+ship.x = app.screen.width / 2;
+ship.y = app.screen.height / 2;
 
-app.stage.addChild(bunny);
+app.stage.addChild(ship);
 
 app.ticker.add(() => {
   // just for fun, let's rotate mr rabbit a little
-  bunny.rotation += 0.015;
+  ship.rotation += 0.015;
 });
