@@ -3,7 +3,7 @@ const app = new PIXI.Application({
   transparent: true,
   backgroundColor: 0x00000f,
   width: 640,
-  height: 480,
+  height: 454,
   resolution: window.devicePixelRatio || 1
 });
 document.body.appendChild(app.view);
@@ -13,8 +13,8 @@ document.body.appendChild(app.view);
 const ship = PIXI.Sprite.from("/assets/fighterspr1.png");
 
 // escalado del sprite al 30% del tamaño original proporcional al viewport
-ship.width = ship.width * app.screen.width * 0.3;
-ship.height = ship.height * app.screen.height * 0.3;
+ship.width = ship.width * app.screen.width * 0.25;
+ship.height = ship.height * app.screen.height * 0.25;
 
 // center the sprite's anchor point
 ship.anchor.set(0.5);
