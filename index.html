@@ -53,6 +53,15 @@
       }
     </style>
   </head>
+  <script>
+    window.onload = function () {
+      let lmnt = document.getElementById("currd");
+      if (lmnt != null || lmnt != "") lmnt.click();
+    };
+    function linked(sender) {
+      document.getElementById("demoCaption").innerHTML = sender.innerHTML;
+    }
+  </script>
   <body style="font-family: Verdana; color: #aaaaaa; background: #222222;">
     <div
       style="
@@ -62,15 +71,23 @@
         padding: 4px;
       "
     >
-      <h1>JSandbox v0.11</h1>
+      <h1>JSandbox v0.12</h1>
     </div>
 
     <div style="overflow: auto;">
       <div class="menu">
-        <a href="html/demo1.htm" target="frame" id="d1">Demo 1</a>
-        <a href="html/demo2.htm" target="frame" id="d2">Demo 2</a>
-        <a href="#">Link 3</a>
-        <a href="#">Link 4</a>
+        <a href="html/demo1.htm" target="frame" onclick="linked(this);"
+          >Demo 1</a
+        >
+        <a
+          href="html/demo2.htm"
+          target="frame"
+          id="currd"
+          onclick="linked(this);"
+          >Demo 2</a
+        >
+        <a href="html/demo3.htm" onclick="linked(this);">Demox</a>
+        <a href="#" onclick="linked(this);">Link 4</a>
       </div>
 
       <div class="main">
@@ -91,15 +108,11 @@
         padding: 2px;
         margin-top: 7px;
       "
+      id="demoCaption"
     >
-      Demo 1
+      Cargando..
     </div>
-    <iframe name="frame" width="100%" height="460px" src="html/demo1.htm" />
+    <!--<iframe name="frame" width="100%" height="460px" src="html/demo1.htm" />-->
+    <iframe name="frame" width="100%" height="460px" />
   </body>
-  <script>
-    window.onload = function () {
-      let lmnt = document.getElementById("d2");
-      if (lnmt != null || lmnt != "") lnmt.click();
-    };
-  </script>
 </html>
